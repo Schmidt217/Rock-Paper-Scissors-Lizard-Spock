@@ -1,0 +1,403 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	width: 100vw;
+	height: 100vh;
+}
+body {
+	font-family: "Barlow Semi Condensed", sans-serif;
+	font-size: 1rem;
+	width: 100%;
+	height: 100vh;
+	background-color: #1f3756;
+	background-image: linear-gradient(90deg, #1f3756 0%, #141539 100%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.hidden {
+	display: none !important;
+}
+
+/* header */
+
+#title {
+	color: hsl(229, 64%, 46%);
+	border: 2px hsl(217, 16%, 45%) solid;
+	border-radius: 20px;
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+	text-align: center;
+	margin: auto;
+	margin-top: 3%;
+	margin-bottom: 3%;
+	padding: 1%;
+}
+.score-box {
+	background-color: white;
+	color: hsl(229, 64%, 46%);
+	width: 20%;
+	border: 2px hsl(217, 16%, 45%) solid;
+	border-radius: 20px;
+	line-height: 1;
+}
+#score p {
+	margin-bottom: 5px;
+}
+.score-heading {
+	margin-top: 10px;
+}
+.score {
+	font-size: 4rem;
+	margin: 0;
+}
+.house-score {
+	font-size: 4rem;
+	margin: 0;
+}
+
+#container {
+	margin-top: 3%;
+	position: relative;
+	height: 22rem;
+	width: 22rem;
+}
+.background-image {
+	background-image: url(/images/bg-pentagon.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 350px;
+	width: 100%;
+	height: 100%;
+}
+
+/* icons */
+
+.icon {
+	border-radius: 50%;
+	cursor: pointer;
+	position: absolute;
+	transition: ease-in 0.3s;
+	box-shadow: inset 1px 1px 5px gray;
+	background-color: white;
+}
+.hover:hover {
+	transform: scale(1.1);
+}
+.scissors {
+	border: 15px solid hsl(40, 84%, 53%);
+	box-shadow: inset 0 5px 0 hsl(216, 13%, 77%), 0px 5px 0 hsl(39, 89%, 46%);
+	padding: 15px 18px;
+	top: -3rem;
+	right: 7rem;
+}
+
+.paper {
+	border: 15px solid hsl(230, 89%, 65%);
+	box-shadow: inset 0 5px 0 hsl(216, 13%, 77%), 0 5px 0 hsl(230, 75%, 58%);
+	padding: 12px 18px;
+	top: 5rem;
+	right: -3rem;
+}
+
+.rock {
+	border: 15px solid hsl(349, 70%, 56%);
+	box-shadow: inset 0 5px 0 hsl(216, 13%, 77%), 0 5px 0 hsl(349, 66%, 49%);
+	padding: 20px;
+	top: 17rem;
+	right: 1rem;
+}
+
+.lizard {
+	border: 15px solid hsl(261, 72%, 63%);
+	box-shadow: inset 0 5px 0 hsl(216, 13%, 77%), 0 5px 0 hsl(261, 63%, 56%);
+	padding: 13px 15px;
+	top: 17rem;
+	right: 14rem;
+}
+
+.spock {
+	border: 15px solid hsl(189, 58%, 57%);
+	box-shadow: inset 0 5px 0 hsl(216, 13%, 77%), 0 5px 0 hsl(189, 52%, 49%);
+	padding: 12px 20px;
+	top: 5rem;
+	right: 17rem;
+}
+
+/* clicked */
+
+.big {
+	transform: scale(2.5);
+	position: absolute;
+	top: 10rem;
+	right: 20rem;
+}
+.slide-left {
+	right: 30rem !important;
+}
+.slide-right {
+	right: -15rem !important;
+}
+
+.comp-chosen {
+	transform: scale(2.5);
+
+	position: absolute;
+	top: 10rem;
+	right: -3rem;
+}
+
+.icon:focus {
+	outline: none;
+}
+/* javascript activated text */
+.you {
+	color: white;
+	font-size: 1.5rem;
+	width: 40%;
+	position: absolute;
+	top: 1rem;
+	right: 28rem;
+}
+
+.house {
+	color: white;
+	font-size: 1.5rem;
+	position: absolute;
+	width: 60%;
+	top: 1rem;
+	left: 28rem;
+}
+
+.restart {
+	color: white;
+	width: 300px;
+	font-size: 2rem;
+	position: absolute;
+	text-align: center;
+	margin: 0 auto;
+}
+.play-again {
+	background-color: white;
+	color: hsl(229, 64%, 46%);
+	border-radius: 10px;
+	padding: 10px 40px;
+}
+
+/* modal */
+#rules-button {
+	font-size: 1.5rem;
+	font-weight: 400;
+	margin-top: 5%;
+	margin-right: 3%;
+	box-shadow: 0px 1px 0px 0px #000000;
+	background-color: transparent;
+	border-radius: 5px;
+	border: 1px solid #ffffff;
+	cursor: pointer;
+	color: #ffffff;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow: 0px -1px 5px hsl(229, 64%, 46%);
+	margin-left: 90%;
+	transition: ease-in 0.3s;
+}
+#rules-button:hover {
+	transform: scale(1.05);
+	box-shadow: 1px 1px 1px 1px rgb(92, 92, 92);
+}
+
+.close-modal {
+	position: absolute;
+	top: 1.2rem;
+	right: 2rem;
+	font-size: 5rem;
+	color: #333;
+	cursor: pointer;
+	border: none;
+	background: none;
+}
+
+.modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+	padding: 3%;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+	z-index: 10;
+}
+.modal img {
+	width: 90%;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(3px);
+	z-index: 5;
+}
+@media only screen and (max-width: 1300px) {
+	#title {
+		width: 65%;
+	}
+	.score-box {
+		width: 25%;
+	}
+	.score-heading {
+		font-size: 0.75rem;
+	}
+
+	.big {
+		transform: scale(2);
+	}
+	.comp-chosen {
+		transform: scale(2);
+	}
+	#rules-button {
+		margin-right: 3%;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	#container {
+		margin-top: 7%;
+	}
+
+	.modal {
+		width: 75%;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	#title {
+		width: 75%;
+	}
+	.score-box {
+		width: 30%;
+	}
+	.score-heading {
+		font-size: 0.75rem;
+	}
+	/* images/icons */
+
+	.icon {
+		transform: scale(0.85);
+	}
+
+	.slide-left {
+		right: 20rem !important;
+	}
+	.slide-right {
+		right: -20rem !important;
+	}
+
+	.you {
+		right: 18rem;
+	}
+	.house {
+		left: 15rem;
+	}
+
+	/* end game */
+
+	.big {
+		transform: scale(1.5);
+		right: 20rem;
+	}
+
+	.comp-chosen {
+		transform: scale(1.5);
+		left: 17rem;
+	}
+
+	.restart {
+		top: 70%;
+	}
+	/* modal open/ close */
+	.close-modal {
+		font-size: 3rem;
+	}
+	.modal {
+		width: 90%;
+	}
+	#rules-button {
+		margin: 0 auto;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	/* For mobile phones: */
+
+	/* title */
+	#title {
+		width: 80%;
+	}
+	#logo {
+		transform: scale(0.65);
+	}
+	.score-box {
+		width: 30%;
+	}
+	.score-heading {
+		font-size: 0.75rem;
+	}
+
+	.icon {
+		transform: scale(0.75);
+	}
+	.background-image {
+		transform: scale(0.5);
+	}
+
+	/* end game */
+
+	.big {
+		transform: scale(1.5);
+
+		top: 45%;
+	}
+
+	.comp-chosen {
+		transform: scale(0.75) translate(-45%);
+		top: 40%;
+	}
+
+	.you {
+		width: 100px;
+		text-align: center;
+		left: 30px;
+		top: 20%;
+	}
+	.house {
+		width: 100px;
+		text-align: center;
+		top: 15%;
+	}
+
+	/* modal open/ close */
+	.close-modal {
+		font-size: 3rem;
+	}
+	.modal {
+		width: 90%;
+	}
+	#rules-button {
+		margin-top: 15%;
+	}
+}

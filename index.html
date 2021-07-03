@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+    <link rel="stylesheet" href="styles.css">
+		<title>Rock, Paper, Scissors, Lizard, Spock</title>
+
+		</style>
+  </head>
+  
+	<body>
+    <!-- title -->
+		<div id = 'title'>
+      <div class="score-box">
+        <p class = 'score-heading'>YOUR SCORE</p>
+        <p class = 'score'></p>
+      </div>
+      
+      <div id= 'logo'>
+        <img src="images/logo-bonus.svg" alt="Game Logo">
+      </div>
+      <div class="score-box">
+        <p class = 'score-heading'>THE HOUSE'S SCORE</p>
+        <p class = 'house-score'></p>
+      </div>
+    </div>
+    <!-- icons -->
+    <div id="container">
+      <p class = 'house hidden'>THE HOUSE PICKED</p>
+        <div id = 'house-cont'></div>
+        <div id="choice">
+          <div>
+          <p class = 'you hidden'>YOU PICKED</p>
+          </div>
+        </div>
+        <div class = 'background-image'> 
+      
+
+          <button class = 'rock icon hover'>
+            <img src="images/icon-rock.svg" alt="rock">
+          </button>
+          
+          
+          
+          <button class = 'paper icon hover'>
+            <img src="images/icon-paper.svg" alt="paper">
+          </button>
+          
+          
+          
+          <button class = 'scissors icon hover'>
+            <img  src="images/icon-scissors.svg" alt="scissors">
+          </button>
+          
+          
+          
+          <button class = 'lizard icon hover'>
+            <img src="images/icon-lizard.svg" alt="lizard">
+          </button>
+          
+          
+          
+          <button class  = 'spock icon hover'>
+            <img src="images/icon-spock.svg" alt="Spock">
+          </button>
+
+        </div>
+        
+      </div>
+      
+      <div class = 'restart hidden'>
+        <p class = 'winner'> Text Holder</p>
+        <button class = 'play-again'> PLAY AGAIN</button>
+      </div>
+      
+
+    <!-- rules -->
+    <button id = 'rules-button' class = 'show-modal'>Rules</button>
+    <div id="rules" class = 'modal hidden'>
+          <button class="close-modal">&times;</button>
+          <img src="images/image-rules-bonus.svg" alt="The Rules">
+          <p>Still confused about the rules? Maybe <a href="https://www.youtube.com/watch?v=iSHPVCBsnLw" target="_blank">Sheldon</a> can help you out. </p>
+      </button>
+    </div>
+    <div class="overlay hidden"></div>
+
+
+
+    <script src="script.js"></script>
+	</body>
+</html>
