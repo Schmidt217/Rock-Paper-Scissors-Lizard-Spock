@@ -190,6 +190,7 @@ body {
 	color: hsl(229, 64%, 46%);
 	border-radius: 10px;
 	padding: 10px 40px;
+	cursor: pointer;
 }
 
 /* modal */
